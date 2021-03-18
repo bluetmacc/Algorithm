@@ -8,3 +8,7 @@
 - [最长公共前缀](https://github.com/bluetmacc/algorithm/blob/main/leetcode/src/leetcode/Solution_03_17.java)
 ## 2020-03-18
 - [罗马数字转整数](https://github.com/bluetmacc/algorithm/blob/main/leetcode/src/leetcode/Solution_03_18.java)
+## 2020-03-18
+- [罗马数字转整数](https://github.com/bluetmacc/algorithm/blob/main/leetcode/src/leetcode/Solution_03_18.java)
+## 2020-03-19
+- [搜索插入位置](https://github.com/bluetmacc/algorithm/blob/main/leetcode/src/leetcode/Solution_03_19.java)
