@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.HashMap;
+
 // https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/
 class Solution_03_24 {
     // 滑动窗口
@@ -7,20 +9,17 @@ class Solution_03_24 {
     // 一直维持这样的队列，找出队列出现最长的长度.
     // 时间复杂度：O(n)
     public int lengthOfLongestSubstring_1(String s) {
-        int count = 0;
-        int res = 0;
-        String snap = "";
-        for(int i = 0; i < s.length();i++){
-            String sindex = s.substring(i,i+1);
-            if(snap.contains(sindex)){
-                snap = snap.substring(snap.indexOf(sindex)+1,snap.length())+sindex;
-                if(res<count)res=count;
-                count = snap.length();
-            }else{
-                snap += sindex;
-                count++;
+        if (s.length()==0) return 0;
+        HashMap<Character, Integer> map = new HashMap<Character, Integer>();
+        int max = 0;
+        int left = 0;
+        for(int i = 0; i < s.length(); i ++){
+            if(map.containsKey(s.charAt(i))){
+                left = Math.max(left,map.get(s.charAt(i)) + 1);
             }
+            map.put(s.charAt(i),i);
+            max = Math.max(max,i-left+1);
         }
-        return res>count?res:count;
+        return max;
     }
 }
